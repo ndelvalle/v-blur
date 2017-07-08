@@ -25,9 +25,9 @@
   },
   "homepage": "https://github.com/ndelvalle/v-blur#readme",
   "devDependencies": {
-    "babel-jest": "^19.0.0",
+    "babel-jest": "^20.0.3",
     "babel-preset-es2015-rollup": "^3.0.0",
-    "jest": "^19.0.2",
+    "jest": "^20.0.4",
     "np": "^2.13.1",
     "rollup": "^0.41.6",
     "rollup-plugin-babel": "^2.7.1",

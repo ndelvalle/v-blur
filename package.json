@@ -1,0 +1,59 @@
+{
+  "name": "v-blur",
+  "version": "0.0.1",
+  "description": "Simple Vue directive to blur a specific element",
+  "author": "ndelvalle <nicolas.delvalle@gmail.com>",
+  "main": "dist/v-blur.min.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "cover": "open coverage/lcov-report/index.html",
+    "build": "rollup -c",
+    "lint": "standard",
+    "lint:fix": "standard --fix",
+    "release": "np"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ndelvalle/v-blur.git"
+  },
+  "keywords": [
+    "vue"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ndelvalle/v-blur/issues"
+  },
+  "homepage": "https://github.com/ndelvalle/v-blur#readme",
+  "devDependencies": {
+    "babel-jest": "^19.0.0",
+    "babel-preset-es2015-rollup": "^3.0.0",
+    "jest": "^19.0.2",
+    "np": "^2.13.1",
+    "rollup": "^0.41.6",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-filesize": "^1.2.1",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-uglify": "^1.0.1",
+    "standard": "^10.0.1"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageThreshold": {
+      "global": {
+        "branches": 70,
+        "functions": 70,
+        "lines": 70,
+        "statements": 70
+      }
+    },
+    "collectCoverageFrom": [
+      "lib/**"
+    ],
+    "roots": [
+      "test/"
+    ]
+  },
+  "engines": {
+    "node": ">=6"
+  }
+}

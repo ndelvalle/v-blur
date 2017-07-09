@@ -1,6 +1,6 @@
 {
   "name": "v-blur",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple Vue directive to blur a specific element",
   "author": "ndelvalle <nicolas.delvalle@gmail.com>",
   "main": "dist/v-blur.min.js",

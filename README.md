@@ -47,13 +47,14 @@ Vue.use(vBlur)
 </template>
 ```
 
-## Result
-
+## Example
 ![v-blur](https://raw.githubusercontent.com/ndelvalle/v-blur/master/v-blur-image.png)
+
+## Todo
+Add functionality to change opacity, filter and transition on setup time. Contributions welcome :)
 
 ## License
 [MIT License](https://github.com/ndelvalle/v-blur/blob/master/LICENSE)
 
 ## Style
 [![Standard - JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
-

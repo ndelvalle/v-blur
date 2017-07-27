@@ -1,4 +1,4 @@
-/* global describe it expect */
+/* global describe, it, expect */
 
 import directive from '../lib/v-blur'
 
@@ -12,7 +12,7 @@ describe('v-blur -> directive', () => {
   })
 
   describe('bind', () => {
-    it('adds a filter, transition and an opacity style if the value is truthy', () => {
+    it('adds a default filter, transition and an opacity style if the binding value is truthy', () => {
       const bind = directive.bind
       const div = document.createElement('div')
 
@@ -23,21 +23,7 @@ describe('v-blur -> directive', () => {
       expect(div.style.transition, 'all .2s linear')
     })
 
-    it('adds a filter, transition and an opacity style according config argumet', () => {
-      const bind = directive.bind
-      const div = document.createElement('div')
-
-      const opacity = 0.1
-      const filter = 2
-
-      bind(div, { value: { opacity, filter } })
-
-      expect(div.style.opacity, opacity)
-      expect(div.style.filter, `blur(${filter}px)`)
-      expect(div.style.transition, 'all .2s linear')
-    })
-
-    it('adds a transition and remove the filter and opacity style if the value is falsy', () => {
+    it('removes default filter and an opacity style if the binding value is falsy', () => {
       const bind = directive.bind
       const div = document.createElement('div')
 
@@ -47,10 +33,40 @@ describe('v-blur -> directive', () => {
       expect(div.style.filter, 'none')
       expect(div.style.transition, 'all .2s linear')
     })
+
+    it('adds custom filter, transition and an opacity style if the binding value is an object and isBlurred attribute is truthy', () => {
+      const bind = directive.bind
+      const div = document.createElement('div')
+
+      const opacity = 0.1
+      const filter = 'blur(2px)'
+      const isBlurred = true
+
+      bind(div, { value: { opacity, filter, isBlurred } })
+
+      expect(div.style.opacity, opacity)
+      expect(div.style.filter, filter)
+      expect(div.style.transition, 'all .2s linear')
+    })
+
+    it('removes custom filter and opacity style if the binding value is an object and isBlurred attribute is falsy', () => {
+      const bind = directive.bind
+      const div = document.createElement('div')
+
+      const opacity = 0.1
+      const filter = 'blur(2px)'
+      const isBlurred = false
+
+      bind(div, { value: { opacity, filter, isBlurred } })
+
+      expect(div.style.opacity, 1)
+      expect(div.style.filter, 'none')
+      expect(div.style.transition, 'all .2s linear')
+    })
   })
 
   describe('update', () => {
-    it('adds a filter, transition and an opacity style if the value is truthy', () => {
+    it('adds a default filter, transition and an opacity style if the binding value is truthy', () => {
       const update = directive.update
       const div = document.createElement('div')
 
@@ -61,25 +77,41 @@ describe('v-blur -> directive', () => {
       expect(div.style.transition, 'all .2s linear')
     })
 
-    it('adds a filter, transition and an opacity style according config argumet', () => {
-      const update = directive.update
-      const div = document.createElement('div')
-
-      const opacity = 0.1
-      const filter = 2
-
-      update(div, { value: { opacity, filter } })
-
-      expect(div.style.opacity, opacity)
-      expect(div.style.filter, `blur(${filter}px)`)
-      expect(div.style.transition, 'all .2s linear')
-    })
-
-    it('adds a transition and remove the filter and opacity style if the value is falsy', () => {
+    it('removes default filter and an opacity style if the binding value is falsy', () => {
       const update = directive.update
       const div = document.createElement('div')
 
       update(div, { value: false })
+
+      expect(div.style.opacity, 1)
+      expect(div.style.filter, 'none')
+      expect(div.style.transition, 'all .2s linear')
+    })
+
+    it('adds custom filter, transition and an opacity style if the binding value is an object and isBlurred attribute is truthy', () => {
+      const update = directive.update
+      const div = document.createElement('div')
+
+      const opacity = 0.1
+      const filter = 'blur(2px)'
+      const isBlurred = true
+
+      update(div, { value: { opacity, filter, isBlurred } })
+
+      expect(div.style.opacity, opacity)
+      expect(div.style.filter, filter)
+      expect(div.style.transition, 'all .2s linear')
+    })
+
+    it('removes custom filter and opacity style if the binding value is an object and isBlurred attribute is falsy', () => {
+      const update = directive.update
+      const div = document.createElement('div')
+
+      const opacity = 0.1
+      const filter = 'blur(2px)'
+      const isBlurred = false
+
+      update(div, { value: { opacity, filter, isBlurred } })
 
       expect(div.style.opacity, 1)
       expect(div.style.filter, 'none')

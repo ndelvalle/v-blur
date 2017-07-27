@@ -3,6 +3,9 @@
   "version": "0.0.2",
   "description": "Simple Vue directive to blur a specific element",
   "author": "ndelvalle <nicolas.delvalle@gmail.com>",
+  "contributors": [
+    "Ignacio Anaya <ignacio.anaya89@gmail.com>"
+  ],
   "main": "dist/v-blur.min.js",
   "scripts": {
     "test": "jest --coverage",

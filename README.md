@@ -8,7 +8,7 @@
 [![bitHound Code](https://www.bithound.io/github/ndelvalle/v-blur/badges/code.svg)](https://www.bithound.io/github/ndelvalle/v-blur)
 
 
-Vue directive to blur an element dynamically. Useful tp partially hide elements, use it with a spinner when content is not ready among other things.
+Vue directive to blur an element dynamically. Useful to partially hide elements, use it with a spinner when content is not ready among other things.
 
 ## Install
 

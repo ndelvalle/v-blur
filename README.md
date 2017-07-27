@@ -8,7 +8,7 @@
 [![bitHound Code](https://www.bithound.io/github/ndelvalle/v-blur/badges/code.svg)](https://www.bithound.io/github/ndelvalle/v-blur)
 
 
-Vue directive to blur a specific element dynamically
+Vue directive to blur an element dynamically. Useful tp partially hide elements, use it with a spinner when content is not ready among other things.
 
 ## Install
 
@@ -19,7 +19,18 @@ $ npm install --save v-blur
 ```bash
 $ yarn add v-blur
 ```
+## Binding value
 
+The binding value can be a Boolean or an Object. If a Boolean is provided, the directive uses default values for [opacity](https://www.w3schools.com/cssref/css3_pr_opacity.asp), [filter](https://www.w3schools.com/jsref/prop_style_filter.asp) and [transition](https://www.w3schools.com/jsref/prop_style_transition.asp). To use a custom configuration, an object with these attributes plus `isBlurred` (To determine when to apply these styles) can be provided.
+
+### Binding object attributes
+
+| option     | default          | type   |
+| -----------|:----------------:| ------:|
+| isBlurred  | false            | boolean|
+| opacity    | 0.5              | number |
+| filter     | 'blur(1.5px)'    | string |
+| transition | 'all .2s linear' | string |
 
 ## Use
 
@@ -35,7 +46,14 @@ Vue.use(vBlur)
   export default {
       data () {
         return {
-          isBlurred: true
+          isBlurred: true,
+          
+          blurConfig: {
+            isBlurred: false,
+            opacity: 0.3,
+            filter: 'blur(1.2px)',
+            transition: 'all .3s linear'
+          }
         }
       }
     }
@@ -44,6 +62,7 @@ Vue.use(vBlur)
 
 <template>
   <div v-blur="isBlurred"></div>
+  <div v-blur="blurConfig"></div>
 </template>
 ```
 

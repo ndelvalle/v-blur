@@ -46,10 +46,10 @@ Vue.use(vBlur)
   export default {
       data () {
         return {
-          isBlurred: true,
+          isBlurred: true, // activate and deactivate blur directive example 1
           
           blurConfig: {
-            isBlurred: false,
+            isBlurred: false, // activate and deactivate blur directive example 2
             opacity: 0.3,
             filter: 'blur(1.2px)',
             transition: 'all .3s linear'
@@ -61,7 +61,10 @@ Vue.use(vBlur)
 </script>
 
 <template>
+  <!-- Example 1 using just a boolean (Uses default values) -->
   <div v-blur="isBlurred"></div>
+
+  <!-- Example 2 using just an object (Uses config values) -->
   <div v-blur="blurConfig"></div>
 </template>
 ```

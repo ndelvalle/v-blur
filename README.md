@@ -64,7 +64,7 @@ Vue.use(vBlur)
   <!-- Example 1 using just a boolean (Uses default values) -->
   <div v-blur="isBlurred"></div>
 
-  <!-- Example 2 using just an object (Uses config values) -->
+  <!-- Example 2 using an object (Uses config values) -->
   <div v-blur="blurConfig"></div>
 </template>
 ```

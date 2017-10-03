@@ -1,0 +1,121 @@
+'use strict';var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {return typeof obj;} : function (obj) {return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;}; /* global describe, it, expect */
+
+var _vBlur = require('../lib/v-blur');var _vBlur2 = _interopRequireDefault(_vBlur);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+describe('v-blur -> directive', function () {
+  it('it has an bind method available', function () {
+    expect(_typeof(_vBlur2.default.bind)).toBe('function');
+  });
+
+  it('it has an update method available', function () {
+    expect(_typeof(_vBlur2.default.update)).toBe('function');
+  });
+
+  describe('bind', function () {
+    it('adds a default filter, transition and an opacity style if the binding value is truthy', function () {
+      var bind = _vBlur2.default.bind;
+      var div = document.createElement('div');
+
+      bind(div, { value: true });
+
+      expect(div.style.opacity, 0.5);
+      expect(div.style.filter, 'blur(1.5px)');
+      expect(div.style.transition, 'all .2s linear');
+    });
+
+    it('removes default filter and an opacity style if the binding value is falsy', function () {
+      var bind = _vBlur2.default.bind;
+      var div = document.createElement('div');
+
+      bind(div, { value: false });
+
+      expect(div.style.opacity, 1);
+      expect(div.style.filter, 'none');
+      expect(div.style.transition, 'all .2s linear');
+    });
+
+    it('adds custom filter, transition and an opacity style if the binding value is an object and isBlurred attribute is truthy', function () {
+      var bind = _vBlur2.default.bind;
+      var div = document.createElement('div');
+
+      var opacity = 0.1;
+      var filter = 'blur(2px)';
+      var isBlurred = true;
+
+      bind(div, { value: { opacity: opacity, filter: filter, isBlurred: isBlurred } });
+
+      expect(div.style.opacity, opacity);
+      expect(div.style.filter, filter);
+      expect(div.style.transition, 'all .2s linear');
+    });
+
+    it('removes custom filter and opacity style if the binding value is an object and isBlurred attribute is falsy', function () {
+      var bind = _vBlur2.default.bind;
+      var div = document.createElement('div');
+
+      var opacity = 0.1;
+      var filter = 'blur(2px)';
+      var isBlurred = false;
+
+      bind(div, { value: { opacity: opacity, filter: filter, isBlurred: isBlurred } });
+
+      expect(div.style.opacity, 1);
+      expect(div.style.filter, 'none');
+      expect(div.style.transition, 'all .2s linear');
+    });
+  });
+
+  describe('update', function () {
+    it('adds a default filter, transition and an opacity style if the binding value is truthy', function () {
+      var update = _vBlur2.default.update;
+      var div = document.createElement('div');
+
+      update(div, { value: true });
+
+      expect(div.style.opacity, 0.5);
+      expect(div.style.filter, 'blur(1.5px)');
+      expect(div.style.transition, 'all .2s linear');
+    });
+
+    it('removes default filter and an opacity style if the binding value is falsy', function () {
+      var update = _vBlur2.default.update;
+      var div = document.createElement('div');
+
+      update(div, { value: false });
+
+      expect(div.style.opacity, 1);
+      expect(div.style.filter, 'none');
+      expect(div.style.transition, 'all .2s linear');
+    });
+
+    it('adds custom filter, transition and an opacity style if the binding value is an object and isBlurred attribute is truthy', function () {
+      var update = _vBlur2.default.update;
+      var div = document.createElement('div');
+
+      var opacity = 0.1;
+      var filter = 'blur(2px)';
+      var isBlurred = true;
+
+      update(div, { value: { opacity: opacity, filter: filter, isBlurred: isBlurred } });
+
+      expect(div.style.opacity, opacity);
+      expect(div.style.filter, filter);
+      expect(div.style.transition, 'all .2s linear');
+    });
+
+    it('removes custom filter and opacity style if the binding value is an object and isBlurred attribute is falsy', function () {
+      var update = _vBlur2.default.update;
+      var div = document.createElement('div');
+
+      var opacity = 0.1;
+      var filter = 'blur(2px)';
+      var isBlurred = false;
+
+      update(div, { value: { opacity: opacity, filter: filter, isBlurred: isBlurred } });
+
+      expect(div.style.opacity, 1);
+      expect(div.style.filter, 'none');
+      expect(div.style.transition, 'all .2s linear');
+    });
+  });
+});

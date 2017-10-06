@@ -13,11 +13,13 @@ const banner = `/**
  */`
 
 export default {
-  entry: 'lib/index.js',
-  dest: 'dist/v-blur.min.js',
-  format: 'umd',
+  input: 'lib/index.js',
+  output: {
+    file: 'dist/v-blur.min.js',
+    format: 'umd'
+  }, 
   moduleId: 'v-blur',
-  moduleName: 'v-blur',
+  name: 'v-blur',
   banner,
   plugins: [
     resolve({

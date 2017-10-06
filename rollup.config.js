@@ -17,7 +17,7 @@ export default {
   output: {
     file: 'dist/v-blur.min.js',
     format: 'umd'
-  }, 
+  },
   moduleId: 'v-blur',
   name: 'v-blur',
   banner,

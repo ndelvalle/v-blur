@@ -1,6 +1,6 @@
 # v-blur
 
-[![Codeship Status](https://img.shields.io/codeship/3a56b780-4639-0135-c530-069e5644f905/master.svg)](https://app.codeship.com/projects/213256)
+[ ![Codeship Status for ndelvalle/v-blur](https://app.codeship.com/projects/3a56b780-4639-0135-c530-069e5644f905/status?branch=master)](https://app.codeship.com/projects/231348)
 [![Coverage Status](https://coveralls.io/repos/github/ndelvalle/v-blur/badge.svg?branch=master)](https://coveralls.io/github/ndelvalle/v-blur?branch=master)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/4b151e093b7e44ffbb660a84381d84ed)](https://www.codacy.com/app/ndelvalle/v-blur?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ndelvalle/v-blur&amp;utm_campaign=Badge_Grade)
 [![bitHound Overall Score](https://www.bithound.io/github/ndelvalle/v-blur/badges/score.svg)](https://www.bithound.io/github/ndelvalle/v-blur)

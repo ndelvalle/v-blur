@@ -67,6 +67,7 @@ Vue.use(vBlur)
 ```
 
 ## Example
+[![Edit Vue Template](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/823o069zoj)
 ![v-blur](https://raw.githubusercontent.com/ndelvalle/v-blur/master/v-blur-image.png)
 
 ## License

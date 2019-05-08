@@ -31,7 +31,7 @@
     "babel-jest": "^21.0.2",
     "babel-preset-es2015-rollup": "^3.0.0",
     "jest": "^24.7.1",
-    "np": "^4.0.2",
+    "np": "^5.0.1",
     "rollup": "^1.10.1",
     "rollup-plugin-babel": "^3.0.2",
     "rollup-plugin-filesize": "^1.2.1",

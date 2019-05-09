@@ -36,7 +36,7 @@
     "rollup-plugin-babel": "^3.0.2",
     "rollup-plugin-filesize": "^1.2.1",
     "rollup-plugin-node-resolve": "^4.2.3",
-    "rollup-plugin-uglify": "^4.0.0",
+    "rollup-plugin-uglify": "^6.0.2",
     "standard": "^10.0.3"
   },
   "jest": {

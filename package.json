@@ -37,7 +37,7 @@
     "rollup-plugin-filesize": "^6.1.0",
     "rollup-plugin-node-resolve": "^5.0.0",
     "rollup-plugin-uglify": "^6.0.2",
-    "standard": "^13.1.0"
+    "standard": "^14.3.1"
   },
   "jest": {
     "collectCoverage": true,

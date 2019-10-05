@@ -1,9 +1,9 @@
-import uglify from 'rollup-plugin-uglify'
 import babel from 'rollup-plugin-babel'
 import filesize from 'rollup-plugin-filesize'
 import resolve from 'rollup-plugin-node-resolve'
+import { uglify } from 'rollup-plugin-uglify'
 
-const pkg = require('./package.json')
+import pkg from './package.json'
 
 const banner = `/**
  * Simple Vue directive to blur a specific element dynamically
@@ -16,20 +16,17 @@ export default {
   input: 'lib/index.js',
   output: {
     file: 'dist/v-blur.min.js',
-    format: 'umd'
+    format: 'umd',
+    name: 'v-blur',
+    banner
   },
-  moduleId: 'v-blur',
-  name: 'v-blur',
-  banner,
   plugins: [
     resolve({
-      jsnext: true,
-      main: true,
+      mainFields: ['module', 'main', 'jsnext:main'],
       browser: true
     }),
     babel({
-      babelrc: false, // jest makes use of .babelrc
-      presets: ['es2015-rollup']
+      babelrc: true
     }),
     uglify(),
     filesize()

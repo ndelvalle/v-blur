@@ -1,18 +1,17 @@
 /* global describe, it, expect */
 
-import plugin, { defaultOptions } from '../lib'
-import Vue from 'vue'
+import createDirective from '../lib/v-blur'
 
-describe('v-blur:index', () => {
-  it('should use if there has options parameter on install', () => {
+describe('v-blur -> directive default options', () => {
+  it('should use use the default configuration provided on instantiation', () => {
     const options = {
       opacity: 0.2,
       filter: 'blur(0.3px)'
     }
-    Vue.use(plugin, options)
+    const directive = createDirective(options)
 
-    expect(typeof defaultOptions).toEqual('object')
-    expect(defaultOptions.opacity).toEqual(options.opacity)
-    expect(defaultOptions.filter).toEqual(options.filter)
+    expect(typeof directive.options).toEqual('object')
+    expect(directive.options.opacity).toEqual(options.opacity)
+    expect(directive.options.filter).toEqual(options.filter)
   })
 })

@@ -1,6 +1,8 @@
 /* global describe, it, expect */
 
-import directive from '../lib/v-blur'
+import createDirective from '../lib/v-blur'
+
+const directive = createDirective()
 
 describe('v-blur -> directive', () => {
   it('it has an bind method available', () => {

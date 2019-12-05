@@ -6,7 +6,6 @@
 [![devDependencies Status](https://david-dm.org/ndelvalle/v-blur/dev-status.svg)](https://david-dm.org/ndelvalle/v-blur?type=dev)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/4b151e093b7e44ffbb660a84381d84ed)](https://www.codacy.com/app/ndelvalle/v-blur?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ndelvalle/v-blur&amp;utm_campaign=Badge_Grade)
 
-
 Vue directive to blur an element dynamically. Useful to partially hide elements, use it with a spinner when content is not ready among other things.
 
 ## Install
@@ -38,6 +37,15 @@ import Vue from 'vue'
 import vBlur from 'v-blur'
 
 Vue.use(vBlur)
+
+// Alternatively an options object can be used to set defaults. All of these
+// options are not required, example:
+// Vue.use(vBlur, {
+//   opacity: 0.2,
+//   filter: 'blur(1.2px)',
+//   transition: 'all .3s linear'
+// })
+
 ```
 
 ```js
@@ -45,10 +53,16 @@ Vue.use(vBlur)
   export default {
       data () {
         return {
-          isBlurred: true, // activate and deactivate blur directive example 1
-          
+          // Example 1:
+          // Activate and deactivate blur directive using defaults values
+          // provided in the Vue.use instantiation or by the library.
+          isBlurred: true,
+
+          // Example 2:
+          // Activate and deactivate blur directive providing a local
+          // configuration object.
           blurConfig: {
-            isBlurred: false, // activate and deactivate blur directive example 2
+            isBlurred: false,
             opacity: 0.3,
             filter: 'blur(1.2px)',
             transition: 'all .3s linear'

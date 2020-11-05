@@ -65,6 +65,18 @@ describe('v-blur -> directive', () => {
       expect(div.style.filter).toBe('none')
       expect(div.style.transition).toBe('all .2s linear')
     })
+
+    it('sets pointer events and user-select styles to none if the binding value is truthy', () => {
+      const bind = directive.bind
+      const div = document.createElement('div')
+
+      const isBlurred = true
+
+      bind(div, { value: { isBlurred } })
+
+      expect(div.style.userSelect).toBe('none')
+      expect(div.style.pointerEvents).toBe('none')
+    })
   })
 
   describe('update', () => {
@@ -118,6 +130,16 @@ describe('v-blur -> directive', () => {
       expect(div.style.opacity).toBe('1')
       expect(div.style.filter).toBe('none')
       expect(div.style.transition).toBe('all .2s linear')
+    })
+
+    it('sets pointer events and user-select styles to defaults if the binding value is falsy', () => {
+      const update = directive.update
+      const div = document.createElement('div')
+
+      update(div, { value: false })
+
+      expect(div.style.userSelect).toBe('auto')
+      expect(div.style.pointerEvents).toBe('auto')
     })
   })
 })
